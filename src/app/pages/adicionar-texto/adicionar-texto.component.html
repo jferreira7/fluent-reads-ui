@@ -1,0 +1,20 @@
+<h2 class="card-title mb-6">Adicionar novo texto</h2>
+<form [formGroup]="formTexto" class="flex flex-col h-1/2">
+  <input
+    type="text"
+    placeholder="Título"
+    class="input input-bordered w-full max-w-xs bg-white"
+    formControlName="titulo"
+  />
+  <quill-editor
+    formControlName="conteudo"
+    placeholder="Insira o texto aqui..."
+    [modules]="{ toolbar: false, clipboard: true }"
+    theme="snow"
+    class="w-full mt-3 h-full"
+  ></quill-editor>
+</form>
+
+<div class="flex justify-center py-3">
+  <button class="btn btn-primary" (click)="adicionarTexto()">Salvar</button>
+</div>

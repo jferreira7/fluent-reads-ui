@@ -1,0 +1,14 @@
+<div class="card bg-base-100 w-full h-[312px] flex-grow min-w-64 sombra">
+  <div class="card-body">
+    <h2 class="card-title">{{ texto.titulo }}</h2>
+    <div
+      class="text-ellipsis overflow-hidden line-clamp-3"
+      [innerHTML]="texto.conteudo"
+    ></div>
+    <div class="card-actions justify-end">
+      <button class="btn w-[86px]" [routerLink]="'/texto/' + texto._id">
+        Abrir
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'quill/dist/quill.core.css';
+@import 'quill/dist/quill.snow.css';
+@import 'quill/dist/quill.bubble.css';
+
+.sombra {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

@@ -1,0 +1,26 @@
+<button class="btn btn-secondary w-fit" routerLink="/flashcards/revisao">
+  Inciar revisão
+</button>
+<div class="mt-5">
+  <h2 class="text-xl font-bold mb-4">Palavras revisar:</h2>
+  <table class="table table-zebra">
+    <thead>
+      <tr>
+        <th>Termo</th>
+        <th>Tradução</th>
+        <th>Trecho</th>
+        <th>Nível</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (flashcard of flashcards; track flashcard._id) {
+      <tr>
+        <td>{{ flashcard.conteudo }}</td>
+        <td>{{ flashcard.traducao }}</td>
+        <td>{{ flashcard.contexto }}</td>
+        <td>{{ flashcard.efactor }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

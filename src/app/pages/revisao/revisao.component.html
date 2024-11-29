@@ -1,0 +1,57 @@
+<div
+  class="flex flex-col w-[450px] h-[400px] items-center align-middle sombra rounded-lg px-5 py-6 mt-10 justify-between"
+>
+  @if(!flashcards || flashcards.length === 0 || flashcards.length ===
+  indexCardAtual){
+  <div class="flex flex-col h-full justify-center">
+    <p>Sem novas palavras para revisar hoje!</p>
+  </div>
+  } @else {
+  <div class="flex justify-end w-full">
+    <div class="badge badge-outline">
+      Restantes: {{ indexCardAtual + 1 }}/{{ flashcards.length }}
+    </div>
+  </div>
+  <div
+    class="flex flex-col items-center h-full align-middle justify-between mt-7"
+  >
+    <p>Qual a tradução da palavra abaixo?</p>
+    <p class="py-3 px-4 text-[25px] font-bold">
+      {{ flashcards![indexCardAtual].conteudo }}
+    </p>
+    <p [ngClass]="mostrarResposta ? 'visible' : 'invisible'">
+      <span class="font-bold">Tradução:</span>
+      {{ flashcards![indexCardAtual].traducao }}
+    </p>
+    <p>
+      <span class="font-bold">Trecho:</span>
+      {{ flashcards![indexCardAtual].contexto }}
+    </p>
+  </div>
+  @if (!mostrarResposta) {
+  <div class="divider"></div>
+  <div>
+    <button class="btn btn-active btn-neutral" (click)="mostrarResposta = true">
+      Resposta
+    </button>
+  </div>
+  } @else {
+  <div class="divider"></div>
+  <div class="flex flex-col w-full items-center gap-3">
+    <p class="font-bold">Qual o nível de dificuldade?</p>
+    <div class="flex flex-row gap-2">
+      <button class="btn btn-sm" (click)="atualizarFlashcard(4)">
+        Muito fácil
+      </button>
+      <button class="btn btn-sm" (click)="atualizarFlashcard(3)">Fácil</button>
+      <button class="btn btn-sm" (click)="atualizarFlashcard(2)">Médio</button>
+      <button class="btn btn-sm" (click)="atualizarFlashcard(1)">
+        Difícil
+      </button>
+      <button class="btn btn-sm" (click)="atualizarFlashcard(0)">
+        Muito difícil
+      </button>
+    </div>
+  </div>
+  } }
+</div>

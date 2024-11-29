@@ -1,0 +1,11 @@
+<div class="w-full">
+  <h2 class="py-3 px-4 text-[25px] font-bold">{{ titulo }}</h2>
+  <quill-view-html [content]="texto"></quill-view-html>
+</div>
+<div class="p-2 w-[450px] h-full">
+  <card-traducao
+    [contexto]="contexto"
+    [textoOriginal]="textoOriginal"
+    [traducao]="traducao"
+  ></card-traducao>
+</div>
